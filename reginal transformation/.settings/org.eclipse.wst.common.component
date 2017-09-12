@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="reginal transformation">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="jxl.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jxl/jxl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mysql-connector-java-5.1.26-bin.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/mysql-connector-java-5.1.26-bin/mysql-connector-java-5.1.26-bin">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jacob.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/jacob/jacob">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="reginal_transformation"/>
+        <property name="java-output-path" value="/reginal transformation/build/classes"/>
+    </wb-module>
+</project-modules>
