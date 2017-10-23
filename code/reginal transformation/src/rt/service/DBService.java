@@ -216,6 +216,10 @@ public class DBService {
 		du.closeAll(null, pstmt, conn);
 	}
 	
+	
+	
+	
+	
 	/**
 	 * @param 
 	 * @throws SQLException 

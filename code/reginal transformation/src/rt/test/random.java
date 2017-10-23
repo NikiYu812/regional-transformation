@@ -38,16 +38,16 @@ public class random {
 				}
 			}
 		}*/
-		//读取数据库中可用的房源ID形成列表
+		//读取数据库中可用的房源nh_id形成列表
 		List<String> list = new LinkedList<String>();
 		DBUtil du = new DBUtil();
 		Connection conn = du.getConn();
-		String strsql= "select id from rt_newBuilding where flag = 0";
+		String strsql= "select nh_id from rt_newHouse where isSelected = 0";
 		PreparedStatement pstmt = conn.prepareStatement(strsql); 
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()){
-			list.add(rs.getInt("id")+"");
-//			System.out.println(rs.getInt("id"));
+			list.add(rs.getInt("nh_id")+"");
+//			System.out.println(rs.getInt("nh_id"));
 		}
 		//计算列表大小
 		int max = list.size();
@@ -55,17 +55,17 @@ public class random {
 		//随机产生大于0小于等于max的数r
 		Random rm = new Random();
 		
-		for(int i=0;i<100;i++){
+		for(int i=0;i<3;i++){
 			int r = rm.nextInt(max)+1;
 			System.out.println("random:"+r);
 			//读取list(r)的值
 			String selected = list.get(r-1);
-			System.out.println("selected record id:"+selected);
-			String choose = "select * from rt_newBuilding where id ="+selected;
+			System.out.println("selected record nh_id:"+selected);
+			String choose = "select * from rt_newHouse where nh_id ="+selected;
 			pstmt = conn.prepareStatement(choose); 
 			ResultSet rs1 = pstmt.executeQuery(); 
 			while(rs1.next()){
-				System.out.println(rs1.getString("buildingNO"));
+				System.out.println(rs1.getString("building_no")+"栋"+rs1.getString("house_no"));
 			}
 		}
 

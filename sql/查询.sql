@@ -116,3 +116,17 @@ select * from rt_housingInfo where seqId is null and state = '1';
 
 
 select * from rt_housingInfo where seqId is not null order by seqId;
+
+
+-- INSERT INTO tb_person (p0_name,p0_uid,p0_state,p1_name,p1_idcNo,telNo,oh_id) SELECT DISTINCT OriginalTenant,otUid,em_state,PresentTenant,IDCardNo,Tel,id FROM tb_oldhouse;
+
+INSERT INTO tb_oldhouse (id,house_no,person_id,person_name,location,area,sign_state,move_seq,remark) SELECT id,buildingNo,personId,OriginalTenant,areaId,S,state,seqId,remark FROM tb_oldhouse0;
+
+-- 
+
+-- 筛选出重复项
+select * from (SELECT p0_name as 姓名 , COUNT(p0_name) as 数量 FROM tb_person GROUP BY p0_name) AA where 数量>1;
+
+SELECT * FROM tb_person where oh_id LIKE '%##%';
+
+

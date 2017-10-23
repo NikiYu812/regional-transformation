@@ -45,13 +45,13 @@ public class test {
 			pt = rs.getString("PresentTenant");
 			bn = rs.getString("BuildingNo");
 			telNo = rs.getString("Tel");
-			areaNo = rs.getString("AreaNo");
+//			areaNo = rs.getString("AreaNo");
 			System.out.println("原承租人："+ot+
 					",现承租人："+pt+
 					",房号："+bn+
 					",联系电话："+telNo+
 					",是否签协议："+isOrNot+
-					",区域："+areaNo);  
+					",区域：");  
 			i=1;
 		}  
 		System.out.println("更新结果："+result);
